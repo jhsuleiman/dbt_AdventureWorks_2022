@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: AdventureWorks
+
+    tables:
+      - name: sales_salesorderheader
+      - name: sales_salesorderdetail
+      - name: sales_salesorderheadersalesreason
+      - name: sales_salesreason
+      - name: sales_customer
+      - name: sales_creditcard
+      - name: sales_personcreditcard
+      - name: person_person
+      - name: person_address
+      - name: person_stateprovince
+      - name: person_countryregion
+      - name: production_product
+
+
+
+

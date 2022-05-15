@@ -1,0 +1,10 @@
+
+version: 2
+
+models: 
+    - name: facts_salesorderdetails
+      columns:
+          - name: order_id
+            description: "The primary key for this table"
+            tests:
+                - not_null
