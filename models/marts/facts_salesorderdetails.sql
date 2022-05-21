@@ -17,7 +17,7 @@ with
         from {{ ref ('dim_products')}}
     )
 
-    , locations as (
+    , address as (
         select 
             location_sk
             , address_id
@@ -25,7 +25,7 @@ with
             , state_name
             , country_name
 
-        from {{ ref ('dim_locations')}}
+        from {{ ref ('dim_address')}}
     )
 
     , customers as (
@@ -43,14 +43,14 @@ with
         select
             salesorderheader.order_id
             , reasons.reason_id as reason_fk
-            , locations.address_id as address_fk
+            , address.address_id as address_fk
             , customers.customer_id as customer_fk
             , order_date
             , subtotal
 
         from {{ ref ('stg_salesorderheader')}} salesorderheader
         left join reasons on salesorderheader.order_id = reasons.order_id
-        left join locations on salesorderheader.shiptoaddressid = locations.address_id
+        left join address on salesorderheader.shiptoaddressid = address.address_id
         left join customers on salesorderheader.customer_id = customers.customer_id
 
     )
