@@ -1,0 +1,16 @@
+
+version: 2
+
+models: 
+    - name: facts_salesorderdetails
+      columns:
+          - name: order_id
+            description: "Primary key."
+            tests:
+                - not null 
+
+          - name: order_detail_id
+            description: "Primary key. One incremental unique number per product sold."
+            tests:
+                - not null 
+                - unique

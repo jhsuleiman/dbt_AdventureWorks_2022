@@ -1,0 +1,12 @@
+
+version: 2
+
+models: 
+    - name: dim_reasons
+      description: "Tabela de dimensão de incentivo da compra"
+      columns:
+          - name: reason_sk
+            description: "Chave surrogate auto-incremental"
+            tests:
+                - unique
+                - not_null
