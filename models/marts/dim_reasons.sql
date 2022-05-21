@@ -17,7 +17,7 @@ with
 
     , transformed as (
         select
-            row_number() over (order by order_id) as reason_sk -- auto-incremental surrogate key
+            row_number() over (order by order_id) as reason_sk
             , staging_header_reason.order_id
             , staging_header_reason.reason_id
             , staging_sales_reason.reason_type

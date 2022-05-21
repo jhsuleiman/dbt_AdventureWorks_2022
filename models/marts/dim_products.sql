@@ -9,7 +9,7 @@ with
     
 ,   transformed as (
         select
-        row_number () over (order by product_id) as product_sk -- auto-incremental surrogate key
+        row_number () over (order by product_id) as product_sk
         , *
 
     from staging_production_product
